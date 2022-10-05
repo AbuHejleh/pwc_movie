@@ -12,13 +12,14 @@ class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case splashScreen:
+        return MaterialPageRoute(builder: (_) => SplashScreen());
+      case movieScreen:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
-                create: (context) =>
-                    MoviesListCubit(MoviesListRepository(MoviesServices())),
-                child: SplashScreen()));
-      case movieScreen:
-        return MaterialPageRoute(builder: (_) => MovieScreen());
+                  create: (context) =>
+                      MoviesListCubit(MoviesListRepository(MoviesServices())),
+                  child: MovieScreen(),
+                ));
     }
     return null;
   }
