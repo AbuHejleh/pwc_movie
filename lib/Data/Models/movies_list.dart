@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:pwc_movie/Utilities/Enums.dart';
+import 'package:pwc_movie/Constants/Enums.dart';
 
 MovieListModel movieModelFromJson(String str) =>
     MovieListModel.fromJson(json.decode(str));
